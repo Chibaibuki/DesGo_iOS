@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5E64CCD1C44D06500F85822 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E64CCC1C44D06500F85822 /* main.m */; };
+		D5E64CD01C44D06500F85822 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E64CCF1C44D06500F85822 /* AppDelegate.m */; };
+		D5E64CD31C44D06500F85822 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E64CD21C44D06500F85822 /* ViewController.m */; };
+		D5E64CD61C44D06500F85822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5E64CD41C44D06500F85822 /* Main.storyboard */; };
+		D5E64CD81C44D06500F85822 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5E64CD71C44D06500F85822 /* Assets.xcassets */; };
+		D5E64CDB1C44D06500F85822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5E64CD91C44D06500F85822 /* LaunchScreen.storyboard */; };
+		D5E64CE61C44D06500F85822 /* DesGoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E64CE51C44D06500F85822 /* DesGoTests.m */; };
+		D5E64CF11C44D06500F85822 /* DesGoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E64CF01C44D06500F85822 /* DesGoUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5E64CE21C44D06500F85822 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5E64CC01C44D06400F85822 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5E64CC71C44D06400F85822;
+			remoteInfo = DesGo;
+		};
+		D5E64CED1C44D06500F85822 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5E64CC01C44D06400F85822 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5E64CC71C44D06400F85822;
+			remoteInfo = DesGo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D5E64CC81C44D06400F85822 /* DesGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5E64CCC1C44D06500F85822 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D5E64CCE1C44D06500F85822 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D5E64CCF1C44D06500F85822 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D5E64CD11C44D06500F85822 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D5E64CD21C44D06500F85822 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D5E64CD51C44D06500F85822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D5E64CD71C44D06500F85822 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5E64CDA1C44D06500F85822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D5E64CDC1C44D06500F85822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5E64CE11C44D06500F85822 /* DesGoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesGoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5E64CE51C44D06500F85822 /* DesGoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesGoTests.m; sourceTree = "<group>"; };
+		D5E64CE71C44D06500F85822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5E64CEC1C44D06500F85822 /* DesGoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesGoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5E64CF01C44D06500F85822 /* DesGoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesGoUITests.m; sourceTree = "<group>"; };
+		D5E64CF21C44D06500F85822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5E64CC51C44D06400F85822 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5E64CDE1C44D06500F85822 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5E64CE91C44D06500F85822 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5E64CBF1C44D06400F85822 = {
+			isa = PBXGroup;
+			children = (
+				D5E64CCA1C44D06400F85822 /* DesGo */,
+				D5E64CE41C44D06500F85822 /* DesGoTests */,
+				D5E64CEF1C44D06500F85822 /* DesGoUITests */,
+				D5E64CC91C44D06400F85822 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5E64CC91C44D06400F85822 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5E64CC81C44D06400F85822 /* DesGo.app */,
+				D5E64CE11C44D06500F85822 /* DesGoTests.xctest */,
+				D5E64CEC1C44D06500F85822 /* DesGoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5E64CCA1C44D06400F85822 /* DesGo */ = {
+			isa = PBXGroup;
+			children = (
+				D5E64CCE1C44D06500F85822 /* AppDelegate.h */,
+				D5E64CCF1C44D06500F85822 /* AppDelegate.m */,
+				D5E64CD11C44D06500F85822 /* ViewController.h */,
+				D5E64CD21C44D06500F85822 /* ViewController.m */,
+				D5E64CD41C44D06500F85822 /* Main.storyboard */,
+				D5E64CD71C44D06500F85822 /* Assets.xcassets */,
+				D5E64CD91C44D06500F85822 /* LaunchScreen.storyboard */,
+				D5E64CDC1C44D06500F85822 /* Info.plist */,
+				D5E64CCB1C44D06400F85822 /* Supporting Files */,
+			);
+			path = DesGo;
+			sourceTree = "<group>";
+		};
+		D5E64CCB1C44D06400F85822 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5E64CCC1C44D06500F85822 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5E64CE41C44D06500F85822 /* DesGoTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5E64CE51C44D06500F85822 /* DesGoTests.m */,
+				D5E64CE71C44D06500F85822 /* Info.plist */,
+			);
+			path = DesGoTests;
+			sourceTree = "<group>";
+		};
+		D5E64CEF1C44D06500F85822 /* DesGoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D5E64CF01C44D06500F85822 /* DesGoUITests.m */,
+				D5E64CF21C44D06500F85822 /* Info.plist */,
+			);
+			path = DesGoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5E64CC71C44D06400F85822 /* DesGo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5E64CF51C44D06500F85822 /* Build configuration list for PBXNativeTarget "DesGo" */;
+			buildPhases = (
+				D5E64CC41C44D06400F85822 /* Sources */,
+				D5E64CC51C44D06400F85822 /* Frameworks */,
+				D5E64CC61C44D06400F85822 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DesGo;
+			productName = DesGo;
+			productReference = D5E64CC81C44D06400F85822 /* DesGo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5E64CE01C44D06500F85822 /* DesGoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5E64CF81C44D06500F85822 /* Build configuration list for PBXNativeTarget "DesGoTests" */;
+			buildPhases = (
+				D5E64CDD1C44D06500F85822 /* Sources */,
+				D5E64CDE1C44D06500F85822 /* Frameworks */,
+				D5E64CDF1C44D06500F85822 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5E64CE31C44D06500F85822 /* PBXTargetDependency */,
+			);
+			name = DesGoTests;
+			productName = DesGoTests;
+			productReference = D5E64CE11C44D06500F85822 /* DesGoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D5E64CEB1C44D06500F85822 /* DesGoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5E64CFB1C44D06500F85822 /* Build configuration list for PBXNativeTarget "DesGoUITests" */;
+			buildPhases = (
+				D5E64CE81C44D06500F85822 /* Sources */,
+				D5E64CE91C44D06500F85822 /* Frameworks */,
+				D5E64CEA1C44D06500F85822 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5E64CEE1C44D06500F85822 /* PBXTargetDependency */,
+			);
+			name = DesGoUITests;
+			productName = DesGoUITests;
+			productReference = D5E64CEC1C44D06500F85822 /* DesGoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5E64CC01C44D06400F85822 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = ByStudio;
+				TargetAttributes = {
+					D5E64CC71C44D06400F85822 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					D5E64CE01C44D06500F85822 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = D5E64CC71C44D06400F85822;
+					};
+					D5E64CEB1C44D06500F85822 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = D5E64CC71C44D06400F85822;
+					};
+				};
+			};
+			buildConfigurationList = D5E64CC31C44D06400F85822 /* Build configuration list for PBXProject "DesGo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5E64CBF1C44D06400F85822;
+			productRefGroup = D5E64CC91C44D06400F85822 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5E64CC71C44D06400F85822 /* DesGo */,
+				D5E64CE01C44D06500F85822 /* DesGoTests */,
+				D5E64CEB1C44D06500F85822 /* DesGoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5E64CC61C44D06400F85822 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E64CDB1C44D06500F85822 /* LaunchScreen.storyboard in Resources */,
+				D5E64CD81C44D06500F85822 /* Assets.xcassets in Resources */,
+				D5E64CD61C44D06500F85822 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5E64CDF1C44D06500F85822 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5E64CEA1C44D06500F85822 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5E64CC41C44D06400F85822 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E64CD31C44D06500F85822 /* ViewController.m in Sources */,
+				D5E64CD01C44D06500F85822 /* AppDelegate.m in Sources */,
+				D5E64CCD1C44D06500F85822 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5E64CDD1C44D06500F85822 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E64CE61C44D06500F85822 /* DesGoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5E64CE81C44D06500F85822 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E64CF11C44D06500F85822 /* DesGoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5E64CE31C44D06500F85822 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5E64CC71C44D06400F85822 /* DesGo */;
+			targetProxy = D5E64CE21C44D06500F85822 /* PBXContainerItemProxy */;
+		};
+		D5E64CEE1C44D06500F85822 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5E64CC71C44D06400F85822 /* DesGo */;
+			targetProxy = D5E64CED1C44D06500F85822 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D5E64CD41C44D06500F85822 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5E64CD51C44D06500F85822 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D5E64CD91C44D06500F85822 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5E64CDA1C44D06500F85822 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D5E64CF31C44D06500F85822 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D5E64CF41C44D06500F85822 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D5E64CF61C44D06500F85822 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DesGo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BS.DesGo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D5E64CF71C44D06500F85822 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DesGo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BS.DesGo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D5E64CF91C44D06500F85822 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DesGoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BS.DesGoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesGo.app/DesGo";
+			};
+			name = Debug;
+		};
+		D5E64CFA1C44D06500F85822 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DesGoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BS.DesGoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesGo.app/DesGo";
+			};
+			name = Release;
+		};
+		D5E64CFC1C44D06500F85822 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DesGoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BS.DesGoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DesGo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		D5E64CFD1C44D06500F85822 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DesGoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BS.DesGoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DesGo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5E64CC31C44D06400F85822 /* Build configuration list for PBXProject "DesGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E64CF31C44D06500F85822 /* Debug */,
+				D5E64CF41C44D06500F85822 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5E64CF51C44D06500F85822 /* Build configuration list for PBXNativeTarget "DesGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E64CF61C44D06500F85822 /* Debug */,
+				D5E64CF71C44D06500F85822 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D5E64CF81C44D06500F85822 /* Build configuration list for PBXNativeTarget "DesGoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E64CF91C44D06500F85822 /* Debug */,
+				D5E64CFA1C44D06500F85822 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D5E64CFB1C44D06500F85822 /* Build configuration list for PBXNativeTarget "DesGoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E64CFC1C44D06500F85822 /* Debug */,
+				D5E64CFD1C44D06500F85822 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D5E64CC01C44D06400F85822 /* Project object */;
+}
