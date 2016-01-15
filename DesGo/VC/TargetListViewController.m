@@ -7,6 +7,7 @@
 //
 
 #import "TargetListViewController.h"
+#import "TargetListTableViewCell.h"
 
 @interface TargetListViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -31,6 +32,12 @@
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    return 80;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 5;
 }
@@ -39,13 +46,14 @@
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;{
-    UITableViewCell * testCell = [[UITableViewCell alloc]init];
-    UILabel * aLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, 33)];
-    aLabel.text = @"H";
-    
-    [testCell addSubview:aLabel];
-    
-    return testCell;
+    static NSString *TargetListTableViewCellIdentifier = @"TargetListTableViewCell";
+    TargetListTableViewCell *cell = (TargetListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:TargetListTableViewCellIdentifier];
+    if (cell == nil) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"TargetListTableViewCell" owner:self options:nil] lastObject];
+    }
+    //           // Set up the cell...
+    return cell;
+
 }
 
 /*
