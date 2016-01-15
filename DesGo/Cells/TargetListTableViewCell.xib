@@ -122,6 +122,12 @@
                 </constraints>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="consecutiveCheckNum" destination="wwE-1h-sWI" id="DdO-gT-3v6"/>
+                <outlet property="targetFinNum" destination="gFu-Y2-qGw" id="7ow-9G-uMM"/>
+                <outlet property="targetNowNum" destination="Gqf-sC-JpK" id="NfA-0G-nqT"/>
+                <outlet property="targetTitle" destination="0M4-0p-Snt" id="uz2-SK-udB"/>
+            </connections>
             <point key="canvasLocation" x="150.5" y="394"/>
         </tableViewCell>
     </objects>
