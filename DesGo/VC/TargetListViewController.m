@@ -8,7 +8,7 @@
 
 #import "TargetListViewController.h"
 #import "TargetListTableViewCell.h"
-
+#import "dataPersistence.h"
 @interface TargetListViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
@@ -17,6 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSArray * paths= NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * documentsDirectory = paths[0];
+    NSString * testPath = [documentsDirectory stringByAppendingPathComponent:@"testData.plist"];
+
+    NSLog(@"%@",documentsDirectory);
+    NSMutableArray *tagetTestListArray = [[NSMutableArray alloc]init];
+    NSMutableDictionary *target1 = [[NSDictionary alloc]init];
+    
     
 
     // Do any additional setup after loading the view from its nib.

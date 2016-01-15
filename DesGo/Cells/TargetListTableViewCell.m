@@ -8,6 +8,7 @@
 
 #import "TargetListTableViewCell.h"
 
+
 @implementation TargetListTableViewCell
 
 - (void)awakeFromNib {
