@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+//#import "ViewController.h"
+#import "TargetListViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,8 +21,11 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     [self.window setBackgroundColor:[UIColor whiteColor]];
-    ViewController * testVC = [[ViewController alloc]init];
-    self.window.rootViewController   = testVC;
+    
+//    ViewController * testVC = [[ViewController alloc]init];
+//    self.window.rootViewController   = testVC;
+    TargetListViewController *targetVC = [[TargetListViewController alloc]initWithNibName:@"TargetListViewController" bundle:nil];
+    self.window.rootViewController = targetVC;
     
     [self.window makeKeyAndVisible];
     

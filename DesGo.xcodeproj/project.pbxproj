@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D599601B1C48B37200C660F9 /* TargetListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D59960191C48B37200C660F9 /* TargetListViewController.m */; };
+		D599601C1C48B37200C660F9 /* TargetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D599601A1C48B37200C660F9 /* TargetListViewController.xib */; };
+		D59960211C48BAB700C660F9 /* TargetListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D599601F1C48BAB700C660F9 /* TargetListTableViewCell.m */; };
+		D59960221C48BAB700C660F9 /* TargetListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D59960201C48BAB700C660F9 /* TargetListTableViewCell.xib */; };
 		D5E64CCD1C44D06500F85822 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E64CCC1C44D06500F85822 /* main.m */; };
 		D5E64CD01C44D06500F85822 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E64CCF1C44D06500F85822 /* AppDelegate.m */; };
 		D5E64CD31C44D06500F85822 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E64CD21C44D06500F85822 /* ViewController.m */; };
@@ -36,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D59960181C48B37200C660F9 /* TargetListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetListViewController.h; path = VC/TargetListViewController.h; sourceTree = "<group>"; };
+		D59960191C48B37200C660F9 /* TargetListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetListViewController.m; path = VC/TargetListViewController.m; sourceTree = "<group>"; };
+		D599601A1C48B37200C660F9 /* TargetListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TargetListViewController.xib; path = VC/TargetListViewController.xib; sourceTree = "<group>"; };
+		D599601E1C48BAB700C660F9 /* TargetListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetListTableViewCell.h; path = Cells/TargetListTableViewCell.h; sourceTree = "<group>"; };
+		D599601F1C48BAB700C660F9 /* TargetListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetListTableViewCell.m; path = Cells/TargetListTableViewCell.m; sourceTree = "<group>"; };
+		D59960201C48BAB700C660F9 /* TargetListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TargetListTableViewCell.xib; path = Cells/TargetListTableViewCell.xib; sourceTree = "<group>"; };
 		D5E64CC81C44D06400F85822 /* DesGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E64CCC1C44D06500F85822 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D5E64CCE1C44D06500F85822 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,6 +91,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D59960161C48B2B300C660F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D599601A1C48B37200C660F9 /* TargetListViewController.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D59960171C48B2BB00C660F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D59960181C48B37200C660F9 /* TargetListViewController.h */,
+				D59960191C48B37200C660F9 /* TargetListViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D599601D1C48BA7200C660F9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D599601E1C48BAB700C660F9 /* TargetListTableViewCell.h */,
+				D599601F1C48BAB700C660F9 /* TargetListTableViewCell.m */,
+				D59960201C48BAB700C660F9 /* TargetListTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		D5E64CBF1C44D06400F85822 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +141,9 @@
 		D5E64CCA1C44D06400F85822 /* DesGo */ = {
 			isa = PBXGroup;
 			children = (
+				D599601D1C48BA7200C660F9 /* Cells */,
+				D59960171C48B2BB00C660F9 /* Controller */,
+				D59960161C48B2B300C660F9 /* View */,
 				D5E64CFE1C45903100F85822 /* Model */,
 				D5E64CCE1C44D06500F85822 /* AppDelegate.h */,
 				D5E64CCF1C44D06500F85822 /* AppDelegate.m */,
@@ -258,8 +298,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5E64CDB1C44D06500F85822 /* LaunchScreen.storyboard in Resources */,
+				D59960221C48BAB700C660F9 /* TargetListTableViewCell.xib in Resources */,
 				D5E64CD81C44D06500F85822 /* Assets.xcassets in Resources */,
 				D5E64CD61C44D06500F85822 /* Main.storyboard in Resources */,
+				D599601C1C48B37200C660F9 /* TargetListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +328,9 @@
 			files = (
 				D5E64CD31C44D06500F85822 /* ViewController.m in Sources */,
 				D5E64CD01C44D06500F85822 /* AppDelegate.m in Sources */,
+				D59960211C48BAB700C660F9 /* TargetListTableViewCell.m in Sources */,
 				D5E64CCD1C44D06500F85822 /* main.m in Sources */,
+				D599601B1C48B37200C660F9 /* TargetListViewController.m in Sources */,
 				D5E64D011C45909900F85822 /* dataPersistence.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +557,7 @@
 				D5E64CF71C44D06500F85822 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5E64CF81C44D06500F85822 /* Build configuration list for PBXNativeTarget "DesGoTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +566,7 @@
 				D5E64CFA1C44D06500F85822 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5E64CFB1C44D06500F85822 /* Build configuration list for PBXNativeTarget "DesGoUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +575,7 @@
 				D5E64CFD1C44D06500F85822 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
