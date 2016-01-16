@@ -29,14 +29,38 @@
                         <outlet property="delegate" destination="-1" id="nx8-6w-5tz"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ec9-NB-IIV">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Jtt-bC-0Q1"/>
+                        <constraint firstAttribute="width" constant="50" id="thS-mX-OkQ"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="plusButton"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Jtt-bC-0Q1"/>
+                            <exclude reference="thS-mX-OkQ"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="148" y="530" width="104" height="50"/>
+                        <mask key="constraints">
+                            <include reference="Jtt-bC-0Q1"/>
+                            <include reference="thS-mX-OkQ"/>
+                        </mask>
+                    </variation>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="Ec9-NB-IIV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2uB-xK-OsV"/>
                 <constraint firstItem="Ppr-WK-gbe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3sD-8b-aII">
                     <variation key="widthClass=compact" constant="20"/>
                 </constraint>
                 <constraint firstAttribute="trailing" secondItem="Ppr-WK-gbe" secondAttribute="trailing" id="Ccr-d2-NPY"/>
+                <constraint firstAttribute="bottom" secondItem="Ec9-NB-IIV" secondAttribute="bottom" constant="20" id="EUS-hw-Kh1"/>
                 <constraint firstAttribute="trailing" secondItem="p2H-wz-Q39" secondAttribute="trailing" id="GUn-Sp-Fng"/>
                 <constraint firstItem="p2H-wz-Q39" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MLW-q0-i4w"/>
                 <constraint firstItem="Ppr-WK-gbe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fP2-fg-ezf"/>
@@ -50,6 +74,7 @@
                 <mask key="subviews">
                     <exclude reference="p2H-wz-Q39"/>
                     <exclude reference="Ppr-WK-gbe"/>
+                    <exclude reference="Ec9-NB-IIV"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="3sD-8b-aII"/>
@@ -60,12 +85,15 @@
                     <exclude reference="MLW-q0-i4w"/>
                     <exclude reference="sse-u4-y0d"/>
                     <exclude reference="tgB-1e-jz8"/>
+                    <exclude reference="2uB-xK-OsV"/>
+                    <exclude reference="EUS-hw-Kh1"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="subviews">
                     <include reference="p2H-wz-Q39"/>
                     <include reference="Ppr-WK-gbe"/>
+                    <include reference="Ec9-NB-IIV"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="3sD-8b-aII"/>
@@ -76,11 +104,14 @@
                     <include reference="MLW-q0-i4w"/>
                     <include reference="sse-u4-y0d"/>
                     <include reference="tgB-1e-jz8"/>
+                    <include reference="2uB-xK-OsV"/>
+                    <include reference="EUS-hw-Kh1"/>
                 </mask>
             </variation>
         </view>
     </objects>
     <resources>
         <image name="japan3" width="375" height="667"/>
+        <image name="plusButton" width="50" height="50"/>
     </resources>
 </document>

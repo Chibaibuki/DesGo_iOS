@@ -17,22 +17,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray * paths= NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString * documentsDirectory = paths[0];
-    NSString * testPath = [documentsDirectory stringByAppendingPathComponent:@"testData.plist"];
-
-    NSLog(@"%@",documentsDirectory);
-    NSMutableArray *tagetTestListArray = [[NSMutableArray alloc]init];
-    NSMutableDictionary *target1 = [[NSDictionary alloc]init];
+    self.testDetail = [[NSDictionary alloc]init];
+    NSString* filePath = [dataPersistence dataFilePath:@"testData.plist"];
+    self.testList = [[NSMutableArray alloc]init];
+    NSArray * tmpArray = [[NSArray alloc]initWithContentsOfFile:filePath];
+    [self.testList addObjectsFromArray:tmpArray];
+    UIApplication * app = [UIApplication sharedApplication];
+    NSDate *nowDate = [NSDate date];
+    NSLog(@"date is %@",nowDate);
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:app];
     
-    
-
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - ViewController DataSource
@@ -48,31 +46,40 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.testList.count;
 }
-
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;{
     static NSString *TargetListTableViewCellIdentifier = @"TargetListTableViewCell";
     TargetListTableViewCell *cell = (TargetListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:TargetListTableViewCellIdentifier];
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"TargetListTableViewCell" owner:self options:nil] lastObject];
+        cell.targetTitle.text = self.testList[indexPath.row][@"title"];
+        cell.targetNowNum.text = self.testList[indexPath.row][@"nowTime"];
+        cell.targetFinNum.text = self.testList[indexPath.row][@"targetTime"];
+        cell.consecutiveCheckNum.text = self.testList[indexPath.row][@"contiTime"];
     }
     //           // Set up the cell...
     return cell;
 
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - For testing the data persistence
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+-(void)applicationWillResignActive:(NSNotification*)notifacation{
+    NSString *filePath = [dataPersistence dataFilePath:@"testData.plist"];
+    [self.testList removeAllObjects];
+    NSDictionary * dic1  = [NSDictionary dictionaryWithObjectsAndKeys:@"每天编码6小时",@"title",@"33",@"nowTime",@"/99",@"targetTime",@"33",@"contiTime",nil];
+        NSDictionary * dic2  = [NSDictionary dictionaryWithObjectsAndKeys:@"每天编看xx书",@"title",@"34",@"nowTime",@"/98",@"targetTime",@"34",@"contiTime",nil];
+            NSDictionary * dic3 = [NSDictionary dictionaryWithObjectsAndKeys:@"每天编看xx电影",@"title",@"35",@"nowTime",@"/97",@"targetTime",@"35",@"contiTime",nil];
+    
+    [self.testList addObject:dic1];
+    [self.testList addObject:dic2];
+    [self.testList addObject:dic3];
+    
+    [self.testList writeToFile:filePath atomically:YES];
+    NSLog(@"fin");
 }
-*/
 
 @end

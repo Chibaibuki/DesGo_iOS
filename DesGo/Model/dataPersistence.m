@@ -10,4 +10,10 @@
 
 @implementation dataPersistence
 
++(NSString *)dataFilePath:(NSString *)somedatapath{
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * documentsDirectory = paths[0];
+    return [documentsDirectory stringByAppendingPathComponent:somedatapath];
+}
+
 @end

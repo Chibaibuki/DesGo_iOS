@@ -10,4 +10,5 @@
 
 @interface dataPersistence : NSObject
 
++(NSString *)dataFilePath:(NSString *)somedatapath;  //return a path that includes somedatapath file
 @end
