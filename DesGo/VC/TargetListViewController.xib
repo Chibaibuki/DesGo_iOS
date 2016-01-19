@@ -43,13 +43,15 @@
                             <exclude reference="thS-mX-OkQ"/>
                         </mask>
                     </variation>
-                    <variation key="widthClass=compact" misplaced="YES">
-                        <rect key="frame" x="148" y="530" width="104" height="50"/>
+                    <variation key="widthClass=compact">
                         <mask key="constraints">
                             <include reference="Jtt-bC-0Q1"/>
                             <include reference="thS-mX-OkQ"/>
                         </mask>
                     </variation>
+                    <connections>
+                        <action selector="addTargetClicked:" destination="-1" eventType="touchUpInside" id="hJD-jE-mlJ"/>
+                    </connections>
                 </button>
             </subviews>
             <animations/>
@@ -77,6 +79,8 @@
                     <exclude reference="Ec9-NB-IIV"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="2uB-xK-OsV"/>
+                    <exclude reference="EUS-hw-Kh1"/>
                     <exclude reference="3sD-8b-aII"/>
                     <exclude reference="Ccr-d2-NPY"/>
                     <exclude reference="fP2-fg-ezf"/>
@@ -85,8 +89,6 @@
                     <exclude reference="MLW-q0-i4w"/>
                     <exclude reference="sse-u4-y0d"/>
                     <exclude reference="tgB-1e-jz8"/>
-                    <exclude reference="2uB-xK-OsV"/>
-                    <exclude reference="EUS-hw-Kh1"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -96,6 +98,8 @@
                     <include reference="Ec9-NB-IIV"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="2uB-xK-OsV"/>
+                    <include reference="EUS-hw-Kh1"/>
                     <include reference="3sD-8b-aII"/>
                     <include reference="Ccr-d2-NPY"/>
                     <include reference="fP2-fg-ezf"/>
@@ -104,8 +108,6 @@
                     <include reference="MLW-q0-i4w"/>
                     <include reference="sse-u4-y0d"/>
                     <include reference="tgB-1e-jz8"/>
-                    <include reference="2uB-xK-OsV"/>
-                    <include reference="EUS-hw-Kh1"/>
                 </mask>
             </variation>
         </view>

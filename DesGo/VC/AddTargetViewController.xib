@@ -14,8 +14,109 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="desk" translatesAutoresizingMaskIntoConstraints="NO" id="Lxq-3D-OKG">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <animations/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="31E58PICzaH_1024" translatesAutoresizingMaskIntoConstraints="NO" id="OZd-nm-nyi">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <animations/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入一个目标" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UY0-hG-gOF">
+                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="23" y="37" width="103" height="21"/>
+                    </variation>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="ColorTagetListLabelBk" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-LO-hvM">
+                    <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                    <animations/>
+                    <color key="textColor" red="1" green="0.1764705882352941" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <rect key="frame" x="100" y="78" width="201" height="30"/>
+                    </variation>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZt-d3-O9M">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <animations/>
+                    <state key="normal" title="返回"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="177" y="481" width="46" height="30"/>
+                    </variation>
+                    <connections>
+                        <action selector="cancelButton:" destination="-1" eventType="touchUpInside" id="kF5-ob-1Gt"/>
+                    </connections>
+                </button>
+            </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Lxq-3D-OKG" secondAttribute="bottom" id="1Mj-R1-hZV"/>
+                <constraint firstAttribute="trailing" secondItem="OZd-nm-nyi" secondAttribute="trailing" constant="5" id="6JS-Jf-ywR">
+                    <variation key="widthClass=compact" constant="10"/>
+                </constraint>
+                <constraint firstItem="OZd-nm-nyi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="6Nv-nQ-RqY">
+                    <variation key="widthClass=compact" constant="10"/>
+                </constraint>
+                <constraint firstAttribute="bottom" secondItem="OZd-nm-nyi" secondAttribute="bottom" id="87f-Lw-EFh">
+                    <variation key="widthClass=compact" constant="10"/>
+                </constraint>
+                <constraint firstItem="Lxq-3D-OKG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IJ6-4Q-rLN"/>
+                <constraint firstAttribute="trailing" secondItem="Lxq-3D-OKG" secondAttribute="trailing" id="OYd-fv-bV8"/>
+                <constraint firstItem="Lxq-3D-OKG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cOd-O6-kLy"/>
+                <constraint firstItem="OZd-nm-nyi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="hdO-EP-uUQ"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="Lxq-3D-OKG"/>
+                    <exclude reference="OZd-nm-nyi"/>
+                    <exclude reference="UY0-hG-gOF"/>
+                    <exclude reference="aUz-LO-hvM"/>
+                    <exclude reference="FZt-d3-O9M"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="1Mj-R1-hZV"/>
+                    <exclude reference="IJ6-4Q-rLN"/>
+                    <exclude reference="OYd-fv-bV8"/>
+                    <exclude reference="cOd-O6-kLy"/>
+                    <exclude reference="6JS-Jf-ywR"/>
+                    <exclude reference="6Nv-nQ-RqY"/>
+                    <exclude reference="87f-Lw-EFh"/>
+                    <exclude reference="hdO-EP-uUQ"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="Lxq-3D-OKG"/>
+                    <include reference="OZd-nm-nyi"/>
+                    <include reference="UY0-hG-gOF"/>
+                    <include reference="aUz-LO-hvM"/>
+                    <include reference="FZt-d3-O9M"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="1Mj-R1-hZV"/>
+                    <include reference="IJ6-4Q-rLN"/>
+                    <include reference="OYd-fv-bV8"/>
+                    <include reference="cOd-O6-kLy"/>
+                    <include reference="6JS-Jf-ywR"/>
+                    <include reference="6Nv-nQ-RqY"/>
+                    <include reference="87f-Lw-EFh"/>
+                    <include reference="hdO-EP-uUQ"/>
+                </mask>
+            </variation>
         </view>
     </objects>
+    <resources>
+        <image name="31E58PICzaH_1024" width="512" height="384"/>
+        <image name="ColorTagetListLabelBk" width="134" height="70"/>
+        <image name="desk" width="375" height="667"/>
+    </resources>
 </document>

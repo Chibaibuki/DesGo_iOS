@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *targetListTableView;
 @property (strong,nonatomic)NSDictionary * testDetail;
 @property (strong,nonatomic)NSMutableArray * testList;
+- (IBAction)addTargetClicked:(UIButton *)sender;
 
 @end

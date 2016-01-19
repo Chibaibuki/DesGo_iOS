@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface dataPersistence : NSObject
+@property (nonatomic,strong) NSMutableArray * aCheckLog;
+@property (nonatomic,strong) NSMutableArray * targetsList;
 
 +(NSString *)dataFilePath:(NSString *)somedatapath;  //return a path that includes somedatapath file
+
+-(NSDictionary *)getAllData;
+-(void)writeAllDataIntoFiles:(NSString *)somedatapath;
+
+
+
 @end

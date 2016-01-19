@@ -8,6 +8,7 @@
 
 #import "TargetListViewController.h"
 #import "TargetListTableViewCell.h"
+#import "AddTargetViewController.h"
 #import "dataPersistence.h"
 @interface TargetListViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -82,4 +83,11 @@
     NSLog(@"fin");
 }
 
+- (IBAction)addTargetClicked:(UIButton *)sender {
+    AddTargetViewController * modalView = [[AddTargetViewController alloc]initWithNibName:@"AddTargetViewController" bundle:nil];
+    modalView.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+    // [self presentModalViewController:modalView animated:YES];  ios 6 弃用了该方法
+    [self presentViewController:modalView animated:YES completion:nil];
+}
 @end

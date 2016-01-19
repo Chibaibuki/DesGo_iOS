@@ -34,4 +34,9 @@
 }
 */
 
+- (IBAction)cancelButton:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"Do nothing");
+    }];
+}
 @end

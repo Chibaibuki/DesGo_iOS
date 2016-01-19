@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AddTargetViewController : UIViewController
+- (IBAction)cancelButton:(UIButton *)sender;
 
 @end
