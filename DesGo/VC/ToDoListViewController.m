@@ -47,7 +47,6 @@
     ToDoListTableViewCell *cell = (ToDoListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:ToDoListTableViewCellIdentifier];
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"ToDoListTableViewCell" owner:self options:nil] lastObject];
-
     }
     //           // Set up the cell...
     return cell;

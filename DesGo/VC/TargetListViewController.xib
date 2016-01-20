@@ -53,6 +53,30 @@
                         <action selector="addTargetClicked:" destination="-1" eventType="touchUpInside" id="hJD-jE-mlJ"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhM-EG-Kyv">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="cDR-9W-CcC"/>
+                        <constraint firstAttribute="width" constant="50" id="vpB-fU-OVH"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="nextButton"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="cDR-9W-CcC"/>
+                            <exclude reference="vpB-fU-OVH"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="cDR-9W-CcC"/>
+                            <include reference="vpB-fU-OVH"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="todoListClicked:" destination="-1" eventType="touchUpInside" id="w5e-Cw-S0e"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -65,7 +89,11 @@
                 <constraint firstAttribute="bottom" secondItem="Ec9-NB-IIV" secondAttribute="bottom" constant="20" id="EUS-hw-Kh1"/>
                 <constraint firstAttribute="trailing" secondItem="p2H-wz-Q39" secondAttribute="trailing" id="GUn-Sp-Fng"/>
                 <constraint firstItem="p2H-wz-Q39" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MLW-q0-i4w"/>
+                <constraint firstAttribute="trailing" secondItem="YhM-EG-Kyv" secondAttribute="trailing" constant="15" id="Pnk-NK-t6e">
+                    <variation key="widthClass=compact" constant="35"/>
+                </constraint>
                 <constraint firstItem="Ppr-WK-gbe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fP2-fg-ezf"/>
+                <constraint firstAttribute="bottom" secondItem="YhM-EG-Kyv" secondAttribute="bottom" constant="20" id="nih-Ld-ySZ"/>
                 <constraint firstAttribute="bottom" secondItem="Ppr-WK-gbe" secondAttribute="bottom" id="rny-09-DKZ"/>
                 <constraint firstItem="p2H-wz-Q39" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sse-u4-y0d">
                     <variation key="widthClass=compact" constant="20"/>
@@ -77,10 +105,13 @@
                     <exclude reference="p2H-wz-Q39"/>
                     <exclude reference="Ppr-WK-gbe"/>
                     <exclude reference="Ec9-NB-IIV"/>
+                    <exclude reference="YhM-EG-Kyv"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="2uB-xK-OsV"/>
                     <exclude reference="EUS-hw-Kh1"/>
+                    <exclude reference="Pnk-NK-t6e"/>
+                    <exclude reference="nih-Ld-ySZ"/>
                     <exclude reference="3sD-8b-aII"/>
                     <exclude reference="Ccr-d2-NPY"/>
                     <exclude reference="fP2-fg-ezf"/>
@@ -96,10 +127,13 @@
                     <include reference="p2H-wz-Q39"/>
                     <include reference="Ppr-WK-gbe"/>
                     <include reference="Ec9-NB-IIV"/>
+                    <include reference="YhM-EG-Kyv"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="2uB-xK-OsV"/>
                     <include reference="EUS-hw-Kh1"/>
+                    <include reference="Pnk-NK-t6e"/>
+                    <include reference="nih-Ld-ySZ"/>
                     <include reference="3sD-8b-aII"/>
                     <include reference="Ccr-d2-NPY"/>
                     <include reference="fP2-fg-ezf"/>
@@ -114,6 +148,7 @@
     </objects>
     <resources>
         <image name="japan3" width="375" height="667"/>
+        <image name="nextButton" width="50" height="50"/>
         <image name="plusButton" width="50" height="50"/>
     </resources>
 </document>

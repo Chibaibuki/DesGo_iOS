@@ -21,7 +21,7 @@
 		D5E64CDB1C44D06500F85822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5E64CD91C44D06500F85822 /* LaunchScreen.storyboard */; };
 		D5E64CE61C44D06500F85822 /* DesGoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E64CE51C44D06500F85822 /* DesGoTests.m */; };
 		D5E64CF11C44D06500F85822 /* DesGoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E64CF01C44D06500F85822 /* DesGoUITests.m */; };
-		D5E64D011C45909900F85822 /* dataPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E64D001C45909900F85822 /* dataPersistence.m */; };
+		D5E64D011C45909900F85822 /* DataPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E64D001C45909900F85822 /* DataPersistence.m */; };
 		D5E8F8621C4DB58E007FAD11 /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E8F8601C4DB58E007FAD11 /* ToDoListViewController.m */; };
 		D5E8F8631C4DB58E007FAD11 /* ToDoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E8F8611C4DB58E007FAD11 /* ToDoListViewController.xib */; };
 		D5E8F8671C4DB5EE007FAD11 /* ToDoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E8F8651C4DB5EE007FAD11 /* ToDoListTableViewCell.m */; };
@@ -71,8 +71,8 @@
 		D5E64CEC1C44D06500F85822 /* DesGoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesGoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E64CF01C44D06500F85822 /* DesGoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesGoUITests.m; sourceTree = "<group>"; };
 		D5E64CF21C44D06500F85822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D5E64CFF1C45909900F85822 /* dataPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dataPersistence.h; path = Model/dataPersistence.h; sourceTree = "<group>"; };
-		D5E64D001C45909900F85822 /* dataPersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = dataPersistence.m; path = Model/dataPersistence.m; sourceTree = "<group>"; };
+		D5E64CFF1C45909900F85822 /* DataPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataPersistence.h; path = Model/DataPersistence.h; sourceTree = "<group>"; };
+		D5E64D001C45909900F85822 /* DataPersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataPersistence.m; path = Model/DataPersistence.m; sourceTree = "<group>"; };
 		D5E8F85F1C4DB58E007FAD11 /* ToDoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToDoListViewController.h; path = VC/ToDoListViewController.h; sourceTree = "<group>"; };
 		D5E8F8601C4DB58E007FAD11 /* ToDoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToDoListViewController.m; path = VC/ToDoListViewController.m; sourceTree = "<group>"; };
 		D5E8F8611C4DB58E007FAD11 /* ToDoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ToDoListViewController.xib; path = VC/ToDoListViewController.xib; sourceTree = "<group>"; };
@@ -211,8 +211,8 @@
 		D5E64CFE1C45903100F85822 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D5E64CFF1C45909900F85822 /* dataPersistence.h */,
-				D5E64D001C45909900F85822 /* dataPersistence.m */,
+				D5E64CFF1C45909900F85822 /* DataPersistence.h */,
+				D5E64D001C45909900F85822 /* DataPersistence.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -361,7 +361,7 @@
 				D5E64CCD1C44D06500F85822 /* main.m in Sources */,
 				D5E8F8671C4DB5EE007FAD11 /* ToDoListTableViewCell.m in Sources */,
 				D599601B1C48B37200C660F9 /* TargetListViewController.m in Sources */,
-				D5E64D011C45909900F85822 /* dataPersistence.m in Sources */,
+				D5E64D011C45909900F85822 /* DataPersistence.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

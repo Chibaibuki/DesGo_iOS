@@ -9,7 +9,8 @@
 #import "TargetListViewController.h"
 #import "TargetListTableViewCell.h"
 #import "AddTargetViewController.h"
-#import "dataPersistence.h"
+#import "DataPersistence.h"
+#import "ToDoListViewController.h"
 @interface TargetListViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
@@ -19,14 +20,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.testDetail = [[NSDictionary alloc]init];
-    NSString* filePath = [dataPersistence dataFilePath:@"testData.plist"];
+    NSString* filePath = [DataPersistence dataFilePath:@"testData.plist"];
     self.testList = [[NSMutableArray alloc]init];
     NSArray * tmpArray = [[NSArray alloc]initWithContentsOfFile:filePath];
     [self.testList addObjectsFromArray:tmpArray];
     UIApplication * app = [UIApplication sharedApplication];
-    NSDate *nowDate = [NSDate date];
-    NSLog(@"date is %@",nowDate);
+    
+//    NSDate *yesterdayDate =[nowDate earlierDate:nowDate-1];
+//        NSLog(@"date is %@",[dataFormatter stringFromDate:yesterdayDate]);
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:app];
+    
+    NSLog(@"%@",[DataPersistence getNowDateOrYesterdayDate:YES]);
+    NSLog(@"%@",[DataPersistence getNowDateOrYesterdayDate:NO] );
     
 }
 
@@ -69,7 +74,7 @@
 
 
 -(void)applicationWillResignActive:(NSNotification*)notifacation{
-    NSString *filePath = [dataPersistence dataFilePath:@"testData.plist"];
+    NSString *filePath = [DataPersistence dataFilePath:@"testData.plist"];
     [self.testList removeAllObjects];
     NSDictionary * dic1  = [NSDictionary dictionaryWithObjectsAndKeys:@"每天编码6小时",@"title",@"33",@"nowTime",@"/99",@"targetTime",@"33",@"contiTime",nil];
         NSDictionary * dic2  = [NSDictionary dictionaryWithObjectsAndKeys:@"每天编看xx书",@"title",@"34",@"nowTime",@"/98",@"targetTime",@"34",@"contiTime",nil];
@@ -89,5 +94,14 @@
     
     // [self presentModalViewController:modalView animated:YES];  ios 6 弃用了该方法
     [self presentViewController:modalView animated:YES completion:nil];
+}
+
+- (IBAction)todoListClicked:(UIButton *)sender {
+    NSLog(@"Clicked");
+    ToDoListViewController * todoListVc =  [[ToDoListViewController alloc]initWithNibName:@"ToDoListViewController" bundle:nil];
+    todoListVc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:todoListVc animated:YES completion:nil];
+//    [self.navigationController pushViewController:todoListVc animated:YES];
+    
 }
 @end
