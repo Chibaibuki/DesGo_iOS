@@ -16,8 +16,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nm0-wp-NCv">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nm0-wp-NCv">
+                    <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -25,15 +25,32 @@
                         <outlet property="delegate" destination="-1" id="JhO-yZ-sI3"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eau-mh-fbX">
+                    <rect key="frame" x="-7" y="516" width="104" height="50"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="SKl-f7-BKK"/>
+                        <constraint firstAttribute="width" constant="50" id="ei7-s4-Zof"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="nextButton"/>
+                    <connections>
+                        <action selector="cancelButtonClicked:" destination="-1" eventType="touchUpInside" id="P2l-Oy-eGR"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="nm0-wp-NCv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BnL-9m-hQm"/>
-                <constraint firstItem="nm0-wp-NCv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GEG-Dm-fdc"/>
+                <constraint firstItem="nm0-wp-NCv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="GEG-Dm-fdc"/>
                 <constraint firstAttribute="trailing" secondItem="nm0-wp-NCv" secondAttribute="trailing" id="b0a-V5-oQQ"/>
+                <constraint firstItem="eau-mh-fbX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="gj2-Ns-U8b"/>
                 <constraint firstAttribute="bottom" secondItem="nm0-wp-NCv" secondAttribute="bottom" id="lUR-ZY-snU"/>
+                <constraint firstAttribute="bottom" secondItem="eau-mh-fbX" secondAttribute="bottom" constant="34" id="r5s-nw-iIC"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="nextButton" width="50" height="50"/>
+    </resources>
 </document>

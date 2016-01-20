@@ -8,6 +8,7 @@
 
 #import "ToDoListViewController.h"
 #import "ToDoListTableViewCell.h"
+#import "DataPersistence.h"
 
 @interface ToDoListViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -17,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dataPersistence = [DataPersistence sharedInit];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -34,11 +37,11 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    return 80;
+    return 30;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.dataPersistence.targetsList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;{
@@ -64,4 +67,9 @@
 }
 */
 
+- (IBAction)cancelButtonClicked:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"donothing");
+    }];
+}
 @end

@@ -19,20 +19,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.testDetail = [[NSDictionary alloc]init];
-    NSString* filePath = [DataPersistence dataFilePath:@"testData.plist"];
-    self.testList = [[NSMutableArray alloc]init];
-    NSArray * tmpArray = [[NSArray alloc]initWithContentsOfFile:filePath];
-    [self.testList addObjectsFromArray:tmpArray];
+
+                                         
     UIApplication * app = [UIApplication sharedApplication];
     
 //    NSDate *yesterdayDate =[nowDate earlierDate:nowDate-1];
 //        NSLog(@"date is %@",[dataFormatter stringFromDate:yesterdayDate]);
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:app];
-    
+    self.dataPersistence = [DataPersistence sharedInit];
     NSLog(@"%@",[DataPersistence getNowDateOrYesterdayDate:YES]);
     NSLog(@"%@",[DataPersistence getNowDateOrYesterdayDate:NO] );
     
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+
+    NSLog(@"init!");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,7 +54,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.testList.count;
+    NSLog(@"%lu",self.dataPersistence.targetsList.count);
+    NSLog(@"haha");
+    return self.dataPersistence.targetsList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;{
@@ -60,10 +64,10 @@
     TargetListTableViewCell *cell = (TargetListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:TargetListTableViewCellIdentifier];
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"TargetListTableViewCell" owner:self options:nil] lastObject];
-        cell.targetTitle.text = self.testList[indexPath.row][@"title"];
-        cell.targetNowNum.text = self.testList[indexPath.row][@"nowTime"];
-        cell.targetFinNum.text = self.testList[indexPath.row][@"targetTime"];
-        cell.consecutiveCheckNum.text = self.testList[indexPath.row][@"contiTime"];
+        cell.targetTitle.text = self.dataPersistence.targetsList[indexPath.row][@"detail"][@"targetTitle"];
+        cell.targetNowNum.text = self.dataPersistence.targetsList[indexPath.row][@"detail"][@"nowCheckNum"];
+        cell.targetFinNum.text = self.dataPersistence.targetsList[indexPath.row][@"detail"][@"finCheckNum"];
+        cell.consecutiveCheckNum.text = self.dataPersistence.targetsList[indexPath.row][@"detail"][@"consecutiveCheckNum"];
     }
     //           // Set up the cell...
     return cell;
@@ -89,11 +93,18 @@
 }
 
 - (IBAction)addTargetClicked:(UIButton *)sender {
-    AddTargetViewController * modalView = [[AddTargetViewController alloc]initWithNibName:@"AddTargetViewController" bundle:nil];
-    modalView.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+//    AddTargetViewController * modalView = [[AddTargetViewController alloc]initWithNibName:@"AddTargetViewController" bundle:nil];
+//    modalView.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+//    
+//    // [self presentModalViewController:modalView animated:YES];  ios 6 弃用了该方法
+//    [self presentViewController:modalView animated:YES completion:nil];
+    ///
     
-    // [self presentModalViewController:modalView animated:YES];  ios 6 弃用了该方法
-    [self presentViewController:modalView animated:YES completion:nil];
+    [self.dataPersistence creatNewTargetsWithTitle:@"每天编程1小时" FinCheckNum:99];
+    //    [self.dataPersistence.targetsList removeAllObjects];
+    [self.dataPersistence writeAllDataIntoFiles];
+    [self.dataPersistence reloadData];
+    [self.targetListTableView reloadData];
 }
 
 - (IBAction)todoListClicked:(UIButton *)sender {
@@ -101,7 +112,6 @@
     ToDoListViewController * todoListVc =  [[ToDoListViewController alloc]initWithNibName:@"ToDoListViewController" bundle:nil];
     todoListVc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentViewController:todoListVc animated:YES completion:nil];
-//    [self.navigationController pushViewController:todoListVc animated:YES];
-    
+
 }
 @end

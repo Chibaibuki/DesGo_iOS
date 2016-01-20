@@ -12,12 +12,15 @@
 @property (nonatomic,strong) NSMutableArray * aCheckLog;
 @property (nonatomic,strong) NSMutableArray * targetsList;
 @property (nonatomic,strong) NSMutableArray * aCheckLogList;
-@property (nonatomic,strong) NSMutableDictionary * allDataDetail;
+@property (nonatomic,strong) NSMutableDictionary * allData;
 
 +(NSString *)dataFilePath:(NSString *)somedatapath;  //return a path that includes somedatapath file
 
 -(NSDictionary *)getAllData;
--(void)writeAllDataIntoFiles:(NSString *)somedatapath;
+-(void)writeAllDataIntoFiles;
+-(void)reloadData;
 +(NSString*)getNowDateOrYesterdayDate:(BOOL)i;
 +(instancetype)sharedInit;
+-(void)creatNewTargetsWithTitle:(NSString*)title FinCheckNum:(NSInteger)finchecknum;
+
 @end

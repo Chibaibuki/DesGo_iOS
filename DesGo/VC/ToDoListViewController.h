@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class DataPersistence;
 
 @interface ToDoListViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *toDoListTableView;
-
+- (IBAction)cancelButtonClicked:(UIButton *)sender;
+@property(strong,nonatomic)DataPersistence *dataPersistence;
 @end

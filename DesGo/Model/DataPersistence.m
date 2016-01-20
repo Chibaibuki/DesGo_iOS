@@ -15,17 +15,22 @@
     = [[DataPersistence alloc]init];
 //    dataPresistence.aCheckLog = [[dataPresistence alloc]init];
     dataPersistence.aCheckLog = [[NSMutableArray alloc]init];
-    dataPersistence.allDataDetail = [[NSMutableDictionary alloc]init];
-    
+    dataPersistence.allData = [[NSMutableDictionary alloc]init];
+    dataPersistence.targetsList = [[NSMutableArray alloc]init];
+    [dataPersistence writeAllDataIntoDic];
     return dataPersistence;
 }
+
+
 
 +(NSString *)dataFilePath:(NSString *)somedatapath{
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString * documentsDirectory = paths[0];
     return [documentsDirectory stringByAppendingPathComponent:somedatapath];
 }
-
+-(void)reloadData{
+    [self writeAllDataIntoDic];
+}
 -(NSDictionary *)getAllData{
     NSString *path = [DataPersistence dataFilePath:@"Data.plist"];
     NSDictionary *allDataDic = [[NSDictionary alloc]initWithContentsOfFile:path];
@@ -47,17 +52,12 @@
     return mutableCheckLog;
 }
 
--(NSMutableArray *)checkAnCheckLogAtIndex:(int)i{
-    NSMutableArray *mutableCheckLog = [self getCheckLogAtIndex:i];
-    NSDate *nowDate = [NSDate date];
-    NSDateFormatter * dataFormatter = [[NSDateFormatter alloc]init];
-    [dataFormatter setDateFormat:@"yyyy-MM-dd"];
-    NSString *nowDateString = [dataFormatter stringFromDate:nowDate];
-    NSDictionary * aCheckDic = [[NSDictionary alloc]initWithObjectsAndKeys:nowDateString,@"date",@"1",@"checked", nil];
-    [mutableCheckLog addObject:aCheckDic];
+-(NSMutableDictionary *)getDataDetailAtIndex:(int)i{
+    NSMutableDictionary *dataDetail = [[NSMutableDictionary alloc]initWithDictionary:[self getTargetList][i][@"detail"]];
     
-    return mutableCheckLog;
+    return dataDetail;
 }
+
 
 +(NSString*)getNowDateOrYesterdayDate:(BOOL)i{
     NSDate *nowDate = [NSDate date];
@@ -69,8 +69,58 @@
     }else return [dataFormatter stringFromDate:nowDate];
 }
 
--(void)writeAllDataIntoFiles:(NSString *)somedatapath{
-    
+-(void)writeAllDataIntoDic{
+//    NSMutableDictionary * allMutableData = [[NSMutableDictionary alloc]init];
+    [self.targetsList removeAllObjects];
+    NSMutableArray * targetsList = [self getTargetList];
+    NSUInteger targetsCount = targetsList.count;
+    for (int i=0; i<targetsCount; i++) {
+        NSMutableArray * checkLog = [[NSMutableArray alloc]init];
+        [checkLog addObjectsFromArray:[self getCheckLogAtIndex:i]];
+        NSMutableDictionary * targetsDetail = [[NSMutableDictionary alloc]init];
+        targetsDetail = [self getDataDetailAtIndex:i];
+        
+        NSMutableDictionary * aTargetDic = [[NSMutableDictionary alloc]initWithObjectsAndKeys:targetsDetail,@"detail",checkLog,@"checkLog" ,nil];
+        
+        [self.targetsList addObject:aTargetDic];
+    }
 }
+
+-(void)checkAnCheckLogAtIndex:(int)i{
+
+    NSString *nowDateString = [DataPersistence getNowDateOrYesterdayDate:NO];
+    NSString *yesterdayDateString = [DataPersistence getNowDateOrYesterdayDate:YES];
+    NSDictionary * aCheckDic = [[NSDictionary alloc]initWithObjectsAndKeys:nowDateString,@"date",@"1",@"checked", nil];
+    if (![yesterdayDateString isEqualToString:[self.targetsList lastObject][@"checkLog"][@"date"]]) {
+
+        self.targetsList[i][@"consecutiveCheckNum"] = @"1";
+        
+    }else{
+        NSInteger nowConsecutiveCheckNum = [self.targetsList[i][@"consecutiveCheckNum"] intValue];
+        nowConsecutiveCheckNum++;
+        self.targetsList[i][@"consecutiveCheckNum"] = [NSString stringWithFormat:@"%ld",nowConsecutiveCheckNum];
+    }
+    NSInteger nowCheckNum = [self.targetsList[i][@"nowCheckNum"] intValue];
+    nowCheckNum++;
+    self.targetsList[i][@"nowCheckNum"] = [NSString stringWithFormat:@"%ld",nowCheckNum];
+    
+    [self.targetsList[i][@"checkLog"] addObject:aCheckDic];
+}
+
+-(void)creatNewTargetsWithTitle:(NSString*)title FinCheckNum:(NSInteger)finchecknum{
+    NSMutableArray * checkLog = [[NSMutableArray alloc]init];
+    NSMutableDictionary * aNewTargetDetail = [[NSMutableDictionary alloc]initWithObjectsAndKeys:title,@"targetTitle",[NSString stringWithFormat:@"%ld",finchecknum],@"finCheckNum",@"0",@"nowCheckNum",@"0",@"consecutiveCheckNum",nil];
+    NSMutableDictionary * aNewTarget = [[NSMutableDictionary alloc]initWithObjectsAndKeys:aNewTargetDetail,@"detail",checkLog,@"checkLog", nil];
+    
+    [self.targetsList addObject:aNewTarget];
+}
+
+-(void)writeAllDataIntoFiles{
+        NSString *path = [DataPersistence dataFilePath:@"Data.plist"];
+    self.allData = [[NSMutableDictionary alloc]initWithObjectsAndKeys:self.targetsList,@"targets",[DataPersistence getNowDateOrYesterdayDate:NO],@"latestChangeDate", nil];
+    
+    [self.allData writeToFile:path atomically:YES];
+}
+
 
 @end
