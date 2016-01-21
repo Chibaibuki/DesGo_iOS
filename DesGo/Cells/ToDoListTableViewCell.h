@@ -10,4 +10,7 @@
 
 @interface ToDoListTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *targetTitleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *checkedImageView;
+
 @end

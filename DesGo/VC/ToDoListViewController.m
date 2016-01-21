@@ -50,9 +50,33 @@
     ToDoListTableViewCell *cell = (ToDoListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:ToDoListTableViewCellIdentifier];
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"ToDoListTableViewCell" owner:self options:nil] lastObject];
+        cell.targetTitleLabel.text =self.dataPersistence.targetsList[indexPath.row][@"detail"][@"targetTitle"];
+        if ([[DataPersistence getNowDateOrYesterdayDate:NO] isEqualToString:[self.dataPersistence.targetsList[indexPath.row][@"checkLog"] lastObject][@"date"]]) {
+            [cell.checkedImageView setHidden:NO];
+            [cell.checkedImageView setImage:[UIImage imageNamed:@"rightButton"]];
+            NSLog(@"no");
+        }else{
+            [cell.checkedImageView setHidden:YES];
+            NSLog(@"yes");
+        }
     }
     //           // Set up the cell...
     return cell;
+    
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    if ([[DataPersistence getNowDateOrYesterdayDate:NO] isEqualToString:[self.dataPersistence.targetsList[indexPath.row][@"checkLog"] lastObject][@"date"]]) {
+          NSLog(@"checked");
+        [self.toDoListTableView reloadData];
+    }else{
+        [self.dataPersistence checkAnCheckLogAtIndex:indexPath.row];
+        [self.dataPersistence reloadData];
+        [self.toDoListTableView reloadData];
+    }
     
 }
 

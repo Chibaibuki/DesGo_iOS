@@ -7,7 +7,7 @@
 //
 
 #import "AddTargetViewController.h"
-
+#import "DataPersistence.h"
 @interface AddTargetViewController ()
 
 @end
@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dataPersistence = [DataPersistence sharedInit];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -38,5 +39,15 @@
     [self dismissViewControllerAnimated:YES completion:^{
         NSLog(@"Do nothing");
     }];
+}
+- (IBAction)rightClicked:(UIButton *)sender {
+    [self.dataPersistence creatNewTargetsWithTitle:self.targetTitle.text FinCheckNum:[self.targetFinNum.text intValue]];
+//            [self.dataPersistence.targetsList removeAllObjects];
+//    [self.dataPersistence writeAllDataIntoFiles];
+    [self.dataPersistence reloadData];
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"do nothing");
+    }];
+    
 }
 @end

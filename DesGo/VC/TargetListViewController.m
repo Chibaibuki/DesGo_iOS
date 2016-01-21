@@ -32,9 +32,11 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated{
 
-    NSLog(@"init!");
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [self.dataPersistence reloadData];
+    [self.targetListTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,18 +95,14 @@
 }
 
 - (IBAction)addTargetClicked:(UIButton *)sender {
-//    AddTargetViewController * modalView = [[AddTargetViewController alloc]initWithNibName:@"AddTargetViewController" bundle:nil];
-//    modalView.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-//    
-//    // [self presentModalViewController:modalView animated:YES];  ios 6 弃用了该方法
-//    [self presentViewController:modalView animated:YES completion:nil];
+    AddTargetViewController * modalView = [[AddTargetViewController alloc]initWithNibName:@"AddTargetViewController" bundle:nil];
+    modalView.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+    // [self presentModalViewController:modalView animated:YES];  ios 6 弃用了该方法
+    [self presentViewController:modalView animated:YES completion:nil];
     ///
     
-    [self.dataPersistence creatNewTargetsWithTitle:@"每天编程1小时" FinCheckNum:99];
-    //    [self.dataPersistence.targetsList removeAllObjects];
-    [self.dataPersistence writeAllDataIntoFiles];
-    [self.dataPersistence reloadData];
-    [self.targetListTableView reloadData];
+
 }
 
 - (IBAction)todoListClicked:(UIButton *)sender {

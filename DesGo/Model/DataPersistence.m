@@ -83,28 +83,36 @@
         NSMutableDictionary * aTargetDic = [[NSMutableDictionary alloc]initWithObjectsAndKeys:targetsDetail,@"detail",checkLog,@"checkLog" ,nil];
         
         [self.targetsList addObject:aTargetDic];
+        NSLog(@"added a new dic");
     }
 }
 
--(void)checkAnCheckLogAtIndex:(int)i{
+-(void)checkAnCheckLogAtIndex:(NSInteger)i{
 
     NSString *nowDateString = [DataPersistence getNowDateOrYesterdayDate:NO];
     NSString *yesterdayDateString = [DataPersistence getNowDateOrYesterdayDate:YES];
     NSDictionary * aCheckDic = [[NSDictionary alloc]initWithObjectsAndKeys:nowDateString,@"date",@"1",@"checked", nil];
-    if (![yesterdayDateString isEqualToString:[self.targetsList lastObject][@"checkLog"][@"date"]]) {
-
-        self.targetsList[i][@"consecutiveCheckNum"] = @"1";
+    NSArray * tmpLogArray = self.targetsList[i][@"checkLog"];
+    NSUInteger logArrayCount = tmpLogArray.count;
+    NSString * lastObjectDate = [self.targetsList[i][@"checkLog"] lastObject][@"date"];
+    NSLog(@"%@",lastObjectDate);
+    if (logArrayCount==0) {
+                self.targetsList[i][@"detail"][@"consecutiveCheckNum"] = @"1";
+    }
+    else if ([yesterdayDateString isEqualToString:[self.targetsList[i][@"checkLog"] lastObject][@"date"]]) {
+                self.targetsList[i][@"detail"][@"consecutiveCheckNum"] = @"1";
         
     }else{
-        NSInteger nowConsecutiveCheckNum = [self.targetsList[i][@"consecutiveCheckNum"] intValue];
+        NSInteger nowConsecutiveCheckNum = [self.targetsList[i][@"detail"][@"consecutiveCheckNum"] intValue];
         nowConsecutiveCheckNum++;
-        self.targetsList[i][@"consecutiveCheckNum"] = [NSString stringWithFormat:@"%ld",nowConsecutiveCheckNum];
+        self.targetsList[i][@"detail"][@"consecutiveCheckNum"] = [NSString stringWithFormat:@"%ld",nowConsecutiveCheckNum];
     }
-    NSInteger nowCheckNum = [self.targetsList[i][@"nowCheckNum"] intValue];
+    NSInteger nowCheckNum = [self.targetsList[i][@"detail"][@"nowCheckNum"] intValue];
     nowCheckNum++;
-    self.targetsList[i][@"nowCheckNum"] = [NSString stringWithFormat:@"%ld",nowCheckNum];
+    self.targetsList[i][@"detail"][@"nowCheckNum"] = [NSString stringWithFormat:@"%ld",nowCheckNum];
     
     [self.targetsList[i][@"checkLog"] addObject:aCheckDic];
+    [self writeAllDataIntoFiles];
 }
 
 -(void)creatNewTargetsWithTitle:(NSString*)title FinCheckNum:(NSInteger)finchecknum{
@@ -113,6 +121,7 @@
     NSMutableDictionary * aNewTarget = [[NSMutableDictionary alloc]initWithObjectsAndKeys:aNewTargetDetail,@"detail",checkLog,@"checkLog", nil];
     
     [self.targetsList addObject:aNewTarget];
+    [self writeAllDataIntoFiles];
 }
 
 -(void)writeAllDataIntoFiles{

@@ -22,5 +22,5 @@
 +(NSString*)getNowDateOrYesterdayDate:(BOOL)i;
 +(instancetype)sharedInit;
 -(void)creatNewTargetsWithTitle:(NSString*)title FinCheckNum:(NSInteger)finchecknum;
-
+-(void)checkAnCheckLogAtIndex:(NSInteger)i;
 @end

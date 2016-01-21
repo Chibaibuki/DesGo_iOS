@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class DataPersistence;
 @interface AddTargetViewController : UIViewController
 - (IBAction)cancelButton:(UIButton *)sender;
-
+@property (weak, nonatomic) IBOutlet UITextField *targetTitle;
+- (IBAction)rightClicked:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UITextField *targetFinNum;
+@property (strong,nonatomic)DataPersistence *dataPersistence;
 @end

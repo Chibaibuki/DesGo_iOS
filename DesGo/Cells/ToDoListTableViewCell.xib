@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -8,43 +8,49 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ToDoListTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="ToDoListTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpz-S4-j1f">
-                        <rect key="frame" x="71" y="11.5" width="236" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpz-S4-j1f">
+                        <rect key="frame" x="43" y="19.5" width="269" height="21"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="sn6-s8-JVB"/>
+                            <constraint firstAttribute="height" constant="21" id="U3q-dc-ZhM"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="1" green="0.1764705882" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5r2-Ff-HlE">
-                        <rect key="frame" x="20" y="8" width="46" height="30"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4D7-Gk-U6j">
+                        <rect key="frame" x="14" y="7" width="34" height="27.5"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="46" id="f5y-YB-l4k"/>
-                            <constraint firstAttribute="height" constant="30" id="xbX-ia-xDg"/>
+                            <constraint firstAttribute="height" constant="30" id="Tbx-zC-eI9"/>
+                            <constraint firstAttribute="width" constant="30" id="rfV-dl-NX5"/>
                         </constraints>
-                        <state key="normal" title="Check"/>
-                    </button>
+                    </imageView>
                 </subviews>
                 <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="5r2-Ff-HlE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0Cl-ng-Vl5"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Zpz-S4-j1f" secondAttribute="trailing" constant="5" id="32K-Xb-mWt"/>
-                    <constraint firstItem="Zpz-S4-j1f" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="OfI-mu-waX"/>
-                    <constraint firstItem="Zpz-S4-j1f" firstAttribute="leading" secondItem="5r2-Ff-HlE" secondAttribute="trailing" constant="5" id="Q9m-MM-0zY"/>
-                    <constraint firstItem="5r2-Ff-HlE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="Sxr-Jb-tFr"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Zpz-S4-j1f" secondAttribute="trailing" id="4yB-AW-vOB"/>
+                    <constraint firstItem="4D7-Gk-U6j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="Jna-UO-1Br"/>
+                    <constraint firstItem="Zpz-S4-j1f" firstAttribute="leading" secondItem="4D7-Gk-U6j" secondAttribute="trailing" id="L02-Uj-fgm"/>
+                    <constraint firstItem="4D7-Gk-U6j" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="byz-2F-1JK"/>
+                    <constraint firstItem="Zpz-S4-j1f" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dfh-As-n52"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="checkedImageView" destination="4D7-Gk-U6j" id="ubI-dg-6Sh"/>
+                <outlet property="targetTitleLabel" destination="Zpz-S4-j1f" id="n6d-BS-4ee"/>
+            </connections>
+            <point key="canvasLocation" x="212" y="282"/>
         </tableViewCell>
     </objects>
 </document>
