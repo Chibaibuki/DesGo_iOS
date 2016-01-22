@@ -77,6 +77,30 @@
                         <action selector="todoListClicked:" destination="-1" eventType="touchUpInside" id="w5e-Cw-S0e"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3r-70-UZL">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="NFf-Ta-N2U"/>
+                        <constraint firstAttribute="width" constant="50" id="sVO-6f-PIa"/>
+                    </constraints>
+                    <state key="normal" image="cancelButton"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="NFf-Ta-N2U"/>
+                            <exclude reference="sVO-6f-PIa"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="NFf-Ta-N2U"/>
+                            <include reference="sVO-6f-PIa"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="cancelButtonClicked:" destination="-1" eventType="touchUpInside" id="J9h-UI-xBq"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -89,6 +113,7 @@
                 <constraint firstAttribute="bottom" secondItem="Ec9-NB-IIV" secondAttribute="bottom" constant="20" id="EUS-hw-Kh1"/>
                 <constraint firstAttribute="trailing" secondItem="p2H-wz-Q39" secondAttribute="trailing" id="GUn-Sp-Fng"/>
                 <constraint firstItem="p2H-wz-Q39" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MLW-q0-i4w"/>
+                <constraint firstAttribute="bottom" secondItem="G3r-70-UZL" secondAttribute="bottom" constant="20" id="NZj-tj-mHs"/>
                 <constraint firstAttribute="trailing" secondItem="YhM-EG-Kyv" secondAttribute="trailing" constant="15" id="Pnk-NK-t6e">
                     <variation key="widthClass=compact" constant="35"/>
                 </constraint>
@@ -99,6 +124,7 @@
                     <variation key="widthClass=compact" constant="20"/>
                 </constraint>
                 <constraint firstAttribute="bottom" secondItem="p2H-wz-Q39" secondAttribute="bottom" id="tgB-1e-jz8"/>
+                <constraint firstItem="G3r-70-UZL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="35" id="y8U-Be-wiR"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
@@ -106,12 +132,9 @@
                     <exclude reference="Ppr-WK-gbe"/>
                     <exclude reference="Ec9-NB-IIV"/>
                     <exclude reference="YhM-EG-Kyv"/>
+                    <exclude reference="G3r-70-UZL"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="2uB-xK-OsV"/>
-                    <exclude reference="EUS-hw-Kh1"/>
-                    <exclude reference="Pnk-NK-t6e"/>
-                    <exclude reference="nih-Ld-ySZ"/>
                     <exclude reference="3sD-8b-aII"/>
                     <exclude reference="Ccr-d2-NPY"/>
                     <exclude reference="fP2-fg-ezf"/>
@@ -120,6 +143,12 @@
                     <exclude reference="MLW-q0-i4w"/>
                     <exclude reference="sse-u4-y0d"/>
                     <exclude reference="tgB-1e-jz8"/>
+                    <exclude reference="NZj-tj-mHs"/>
+                    <exclude reference="y8U-Be-wiR"/>
+                    <exclude reference="2uB-xK-OsV"/>
+                    <exclude reference="EUS-hw-Kh1"/>
+                    <exclude reference="Pnk-NK-t6e"/>
+                    <exclude reference="nih-Ld-ySZ"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -128,12 +157,9 @@
                     <include reference="Ppr-WK-gbe"/>
                     <include reference="Ec9-NB-IIV"/>
                     <include reference="YhM-EG-Kyv"/>
+                    <include reference="G3r-70-UZL"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="2uB-xK-OsV"/>
-                    <include reference="EUS-hw-Kh1"/>
-                    <include reference="Pnk-NK-t6e"/>
-                    <include reference="nih-Ld-ySZ"/>
                     <include reference="3sD-8b-aII"/>
                     <include reference="Ccr-d2-NPY"/>
                     <include reference="fP2-fg-ezf"/>
@@ -142,11 +168,18 @@
                     <include reference="MLW-q0-i4w"/>
                     <include reference="sse-u4-y0d"/>
                     <include reference="tgB-1e-jz8"/>
+                    <include reference="NZj-tj-mHs"/>
+                    <include reference="y8U-Be-wiR"/>
+                    <include reference="2uB-xK-OsV"/>
+                    <include reference="EUS-hw-Kh1"/>
+                    <include reference="Pnk-NK-t6e"/>
+                    <include reference="nih-Ld-ySZ"/>
                 </mask>
             </variation>
         </view>
     </objects>
     <resources>
+        <image name="cancelButton" width="50" height="50"/>
         <image name="japan3" width="375" height="667"/>
         <image name="nextButton" width="50" height="50"/>
         <image name="plusButton" width="50" height="50"/>

@@ -112,4 +112,21 @@
     [self presentViewController:todoListVc animated:YES completion:nil];
 
 }
+
+- (IBAction)cancelButtonClicked:(UIButton *)sender {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"删除Target" message:@"是否要删除最近增加的Target" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self.dataPersistence.targetsList removeObjectAtIndex:self.dataPersistence.targetsList.count -1];
+        [self.dataPersistence writeAllDataIntoFiles];
+        [self.dataPersistence reloadData];
+        [self.targetListTableView reloadData];
+         
+    }];
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+
 @end

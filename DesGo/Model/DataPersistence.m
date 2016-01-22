@@ -99,7 +99,7 @@
     if (logArrayCount==0) {
                 self.targetsList[i][@"detail"][@"consecutiveCheckNum"] = @"1";
     }
-    else if ([yesterdayDateString isEqualToString:[self.targetsList[i][@"checkLog"] lastObject][@"date"]]) {
+    else if (![yesterdayDateString isEqualToString:[self.targetsList[i][@"checkLog"] lastObject][@"date"]]) {
                 self.targetsList[i][@"detail"][@"consecutiveCheckNum"] = @"1";
         
     }else{

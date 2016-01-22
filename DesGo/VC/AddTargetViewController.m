@@ -16,8 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.bkImageView setUserInteractionEnabled:YES];
     self.dataPersistence = [DataPersistence sharedInit];
     // Do any additional setup after loading the view from its nib.
+    UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapGesture:)];
+     tapGesture.numberOfTapsRequired=1;
+    [self.bkImageView addGestureRecognizer:tapGesture];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,4 +55,13 @@
     }];
     
 }
+
+-(void)handleTapGesture:(UIGestureRecognizer*)sender{
+    [self.targetTitle resignFirstResponder];
+    [self.targetFinNum resignFirstResponder];
+    
+    NSLog(@"taped");
+
+}
+
 @end

@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddTargetViewController">
             <connections>
+                <outlet property="bkImageView" destination="Lxq-3D-OKG" id="mFg-8M-06z"/>
                 <outlet property="targetFinNum" destination="jXX-ga-udA" id="3fo-zy-OQO"/>
                 <outlet property="targetTitle" destination="uUu-La-cg8" id="YfP-6D-fW4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -20,6 +21,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="japan3" translatesAutoresizingMaskIntoConstraints="NO" id="Lxq-3D-OKG">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <animations/>
+                    <gestureRecognizers/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入完成时间" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-T2-xdL">
                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -162,6 +164,7 @@
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="FZt-d3-O9M" secondAttribute="bottom" constant="35" id="0DM-HM-6ON">
                     <variation key="widthClass=compact" constant="20"/>
@@ -199,22 +202,22 @@
                     <exclude reference="uUu-La-cg8"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="eQR-B7-Jv7"/>
-                    <exclude reference="pJz-Lf-zPN"/>
-                    <exclude reference="CCp-Ml-r4b"/>
-                    <exclude reference="eKl-lW-RY0"/>
-                    <exclude reference="0DM-HM-6ON"/>
-                    <exclude reference="sXF-pj-N0p"/>
-                    <exclude reference="7Qk-uS-n0Z"/>
-                    <exclude reference="a9L-bx-1c9"/>
-                    <exclude reference="1kB-0P-VBh"/>
-                    <exclude reference="ekq-cp-5Qf"/>
-                    <exclude reference="9GP-ee-St3"/>
-                    <exclude reference="V1a-Iy-MBO"/>
                     <exclude reference="1Mj-R1-hZV"/>
                     <exclude reference="IJ6-4Q-rLN"/>
                     <exclude reference="OYd-fv-bV8"/>
                     <exclude reference="cOd-O6-kLy"/>
+                    <exclude reference="1kB-0P-VBh"/>
+                    <exclude reference="ekq-cp-5Qf"/>
+                    <exclude reference="CCp-Ml-r4b"/>
+                    <exclude reference="eKl-lW-RY0"/>
+                    <exclude reference="9GP-ee-St3"/>
+                    <exclude reference="V1a-Iy-MBO"/>
+                    <exclude reference="eQR-B7-Jv7"/>
+                    <exclude reference="pJz-Lf-zPN"/>
+                    <exclude reference="0DM-HM-6ON"/>
+                    <exclude reference="sXF-pj-N0p"/>
+                    <exclude reference="7Qk-uS-n0Z"/>
+                    <exclude reference="a9L-bx-1c9"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -228,22 +231,22 @@
                     <include reference="uUu-La-cg8"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="eQR-B7-Jv7"/>
-                    <include reference="pJz-Lf-zPN"/>
-                    <include reference="CCp-Ml-r4b"/>
-                    <include reference="eKl-lW-RY0"/>
-                    <include reference="0DM-HM-6ON"/>
-                    <include reference="sXF-pj-N0p"/>
-                    <include reference="7Qk-uS-n0Z"/>
-                    <include reference="a9L-bx-1c9"/>
-                    <include reference="1kB-0P-VBh"/>
-                    <include reference="ekq-cp-5Qf"/>
-                    <include reference="9GP-ee-St3"/>
-                    <include reference="V1a-Iy-MBO"/>
                     <include reference="1Mj-R1-hZV"/>
                     <include reference="IJ6-4Q-rLN"/>
                     <include reference="OYd-fv-bV8"/>
                     <include reference="cOd-O6-kLy"/>
+                    <include reference="1kB-0P-VBh"/>
+                    <include reference="ekq-cp-5Qf"/>
+                    <include reference="CCp-Ml-r4b"/>
+                    <include reference="eKl-lW-RY0"/>
+                    <include reference="9GP-ee-St3"/>
+                    <include reference="V1a-Iy-MBO"/>
+                    <include reference="eQR-B7-Jv7"/>
+                    <include reference="pJz-Lf-zPN"/>
+                    <include reference="0DM-HM-6ON"/>
+                    <include reference="sXF-pj-N0p"/>
+                    <include reference="7Qk-uS-n0Z"/>
+                    <include reference="a9L-bx-1c9"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="173" y="317"/>

@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *targetTitle;
 - (IBAction)rightClicked:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UITextField *targetFinNum;
+@property (weak, nonatomic) IBOutlet UIImageView *bkImageView;
+
 @property (strong,nonatomic)DataPersistence *dataPersistence;
 @end

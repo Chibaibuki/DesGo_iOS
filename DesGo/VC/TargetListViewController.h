@@ -15,5 +15,6 @@
 @property (strong,nonatomic)DataPersistence *dataPersistence;
 - (IBAction)addTargetClicked:(UIButton *)sender;
 - (IBAction)todoListClicked:(UIButton *)sender;
+- (IBAction)cancelButtonClicked:(UIButton *)sender;
 
 @end
