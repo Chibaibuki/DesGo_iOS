@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToDoListViewController">
@@ -18,11 +18,9 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="japan3" translatesAutoresizingMaskIntoConstraints="NO" id="0M5-Nu-Hi4">
                     <rect key="frame" x="180" y="236" width="240" height="128"/>
-                    <animations/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nm0-wp-NCv">
-                    <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                    <animations/>
+                    <rect key="frame" x="0.0" y="70" width="600" height="460"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -32,7 +30,6 @@
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eau-mh-fbX">
                     <rect key="frame" x="35" y="530" width="50" height="50"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="SKl-f7-BKK"/>
                         <constraint firstAttribute="width" constant="50" id="ei7-s4-Zof"/>
@@ -42,22 +39,37 @@
                         <action selector="cancelButtonClicked:" destination="-1" eventType="touchUpInside" id="P2l-Oy-eGR"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="今日打卡" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJg-AR-qkR">
+                    <rect key="frame" x="209" y="27" width="93" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="93" id="Gmx-5h-iP4"/>
+                        <constraint firstAttribute="height" constant="21" id="T3c-Vn-uoJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" red="1" green="0.1764705882" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="0M5-Nu-Hi4" secondAttribute="trailing" id="8ie-ng-c11"/>
+                <constraint firstItem="RJg-AR-qkR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="AU8-gw-gke"/>
                 <constraint firstItem="nm0-wp-NCv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BnL-9m-hQm"/>
                 <constraint firstAttribute="bottom" secondItem="0M5-Nu-Hi4" secondAttribute="bottom" id="EQB-oI-EKf"/>
-                <constraint firstItem="nm0-wp-NCv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="GEG-Dm-fdc"/>
+                <constraint firstItem="nm0-wp-NCv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="GEG-Dm-fdc"/>
                 <constraint firstAttribute="trailing" secondItem="nm0-wp-NCv" secondAttribute="trailing" id="b0a-V5-oQQ"/>
                 <constraint firstItem="eau-mh-fbX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="35" id="gj2-Ns-U8b"/>
                 <constraint firstItem="0M5-Nu-Hi4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="l60-r7-jHa"/>
-                <constraint firstAttribute="bottom" secondItem="nm0-wp-NCv" secondAttribute="bottom" id="lUR-ZY-snU"/>
+                <constraint firstAttribute="bottom" secondItem="nm0-wp-NCv" secondAttribute="bottom" constant="70" id="lUR-ZY-snU"/>
+                <constraint firstItem="RJg-AR-qkR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qS9-6W-WmD"/>
                 <constraint firstAttribute="bottom" secondItem="eau-mh-fbX" secondAttribute="bottom" constant="20" id="r5s-nw-iIC"/>
                 <constraint firstItem="0M5-Nu-Hi4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wIs-hM-9Pt"/>
             </constraints>
         </view>
+        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="tww-D4-1Ha">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        </imageView>
     </objects>
     <resources>
         <image name="japan3" width="375" height="667"/>

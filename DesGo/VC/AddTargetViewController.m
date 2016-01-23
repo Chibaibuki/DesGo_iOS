@@ -46,14 +46,22 @@
     }];
 }
 - (IBAction)rightClicked:(UIButton *)sender {
-    [self.dataPersistence creatNewTargetsWithTitle:self.targetTitle.text FinCheckNum:[self.targetFinNum.text intValue]];
-//            [self.dataPersistence.targetsList removeAllObjects];
-//    [self.dataPersistence writeAllDataIntoFiles];
-    [self.dataPersistence reloadData];
-    [self dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"do nothing");
-    }];
-    
+    if ([self.targetTitle.text isEqualToString:@""]) {
+        NSLog(@"empty");
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"标题不符合要求" message:@"请至少输入一个字符作为标题" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleCancel handler:nil];
+            [alertController addAction:cancelAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+
+    }else{
+        [self.dataPersistence creatNewTargetsWithTitle:self.targetTitle.text FinCheckNum:[self.targetFinNum.text intValue]];
+    //            [self.dataPersistence.targetsList removeAllObjects];
+    //    [self.dataPersistence writeAllDataIntoFiles];
+        [self.dataPersistence reloadData];
+        [self dismissViewControllerAnimated:YES completion:^{
+            NSLog(@"do nothing");
+        }];
+    }
 }
 
 -(void)handleTapGesture:(UIGestureRecognizer*)sender{
